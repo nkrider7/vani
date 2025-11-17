@@ -4,9 +4,18 @@ export interface PeriodEntry {
   date: ISODateStr;
 }
 
+export interface DailyLog {
+  date: ISODateStr;
+  temperature?: number; // BBT
+  cervicalMucus?: "dry" | "sticky" | "creamy" | "watery" | "eggwhite";
+  stress?: 1 | 2 | 3 | 4 | 5;
+  sleepHours?: number;
+  symptoms?: string[];
+}
+
 export interface HistoryInput {
-  periodStarts: PeriodEntry[]; // chronological earliest->latest or latest->earliest (we'll accept earliest->latest)
-  cycleLengths?: number[];
+  periodStarts: PeriodEntry[]; // chronological earliest->latest
+  dailyLogs?: DailyLog[];
 }
 
 export interface PredictorConfig {

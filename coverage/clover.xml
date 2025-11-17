@@ -1,85 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1763382905437" clover="3.2.0">
-  <project timestamp="1763382905437" name="All files">
-    <metrics statements="70" coveredstatements="66" conditionals="9" coveredconditionals="1" methods="15" coveredmethods="15" elements="94" coveredelements="82" complexity="0" loc="70" ncloc="70" packages="1" files="3" classes="3"/>
-    <file name="calendarStrategy.ts" path="/home/narendra/Projects/vani/src/core/calendarStrategy.ts">
-      <metrics statements="22" coveredstatements="20" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="6" count="1" type="cond" truecount="0" falsecount="1"/>
-      <line num="9" count="1" type="stmt"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="11" count="2" type="stmt"/>
-      <line num="14" count="1" type="stmt"/>
-      <line num="16" count="1" type="cond" truecount="0" falsecount="1"/>
-      <line num="18" count="0" type="stmt"/>
-      <line num="19" count="0" type="stmt"/>
-      <line num="26" count="1" type="stmt"/>
-      <line num="27" count="1" type="stmt"/>
-      <line num="29" count="1" type="stmt"/>
-      <line num="31" count="1" type="stmt"/>
-      <line num="32" count="1" type="stmt"/>
-      <line num="33" count="1" type="stmt"/>
-      <line num="36" count="1" type="stmt"/>
-      <line num="37" count="1" type="stmt"/>
-      <line num="38" count="1" type="stmt"/>
-      <line num="40" count="1" type="stmt"/>
-      <line num="46" count="1" type="stmt"/>
-    </file>
-    <file name="utils.ts" path="/home/narendra/Projects/vani/src/core/utils.ts">
-      <metrics statements="18" coveredstatements="18" conditionals="5" coveredconditionals="1" methods="9" coveredmethods="9"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="5" count="14" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
-      <line num="9" count="6" type="stmt"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="13" count="6" type="stmt"/>
-      <line num="16" count="1" type="stmt"/>
-      <line num="17" count="4" type="stmt"/>
-      <line num="20" count="1" type="stmt"/>
-      <line num="21" count="3" type="cond" truecount="0" falsecount="1"/>
-      <line num="22" count="6" type="stmt"/>
-      <line num="25" count="1" type="stmt"/>
-      <line num="26" count="2" type="stmt"/>
-      <line num="28" count="4" type="cond" truecount="1" falsecount="1"/>
-      <line num="29" count="2" type="stmt"/>
-      <line num="32" count="1" type="cond" truecount="0" falsecount="2"/>
-      <line num="33" count="6" type="stmt"/>
-    </file>
-    <file name="wmaStrategy.ts" path="/home/narendra/Projects/vani/src/core/wmaStrategy.ts">
-      <metrics statements="30" coveredstatements="28" conditionals="2" coveredconditionals="0" methods="5" coveredmethods="5"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="6" count="1" type="stmt"/>
-      <line num="7" count="2" type="stmt"/>
-      <line num="9" count="1" type="stmt"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="13" count="1" type="stmt"/>
-      <line num="14" count="1" type="cond" truecount="0" falsecount="1"/>
-      <line num="16" count="1" type="stmt"/>
-      <line num="17" count="1" type="stmt"/>
-      <line num="19" count="1" type="cond" truecount="0" falsecount="1"/>
-      <line num="20" count="0" type="stmt"/>
-      <line num="21" count="0" type="stmt"/>
-      <line num="29" count="1" type="stmt"/>
-      <line num="30" count="2" type="stmt"/>
-      <line num="32" count="1" type="stmt"/>
-      <line num="33" count="2" type="stmt"/>
-      <line num="34" count="1" type="stmt"/>
-      <line num="35" count="2" type="stmt"/>
-      <line num="38" count="1" type="stmt"/>
-      <line num="39" count="1" type="stmt"/>
-      <line num="41" count="1" type="stmt"/>
-      <line num="42" count="1" type="stmt"/>
-      <line num="43" count="1" type="stmt"/>
-      <line num="44" count="1" type="stmt"/>
-      <line num="46" count="1" type="stmt"/>
-      <line num="47" count="1" type="stmt"/>
-      <line num="48" count="1" type="stmt"/>
-      <line num="50" count="1" type="stmt"/>
-      <line num="56" count="1" type="stmt"/>
-    </file>
+<coverage generated="1763393178388" clover="3.2.0">
+  <project timestamp="1763393178389" name="All files">
+    <metrics statements="133" coveredstatements="105" conditionals="29" coveredconditionals="8" methods="27" coveredmethods="23" elements="189" coveredelements="136" complexity="0" loc="133" ncloc="133" packages="3" files="6" classes="6"/>
+    <package name="src">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="constants.ts" path="/home/narendra/Projects/vani/src/constants.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/home/narendra/Projects/vani/src/index.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.api">
+      <metrics statements="37" coveredstatements="21" conditionals="8" coveredconditionals="3" methods="10" coveredmethods="6"/>
+      <file name="PredictionEngine.ts" path="/home/narendra/Projects/vani/src/api/PredictionEngine.ts">
+        <metrics statements="37" coveredstatements="21" conditionals="8" coveredconditionals="3" methods="10" coveredmethods="6"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="33" count="1" type="cond" truecount="1" falsecount="2"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="52" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="92" count="0" type="stmt"/>
+        <line num="93" count="0" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="97" count="0" type="stmt"/>
+        <line num="99" count="0" type="stmt"/>
+        <line num="110" count="0" type="stmt"/>
+        <line num="112" count="0" type="stmt"/>
+        <line num="113" count="0" type="stmt"/>
+        <line num="114" count="0" type="stmt"/>
+        <line num="120" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.core">
+      <metrics statements="93" coveredstatements="81" conditionals="21" coveredconditionals="5" methods="16" coveredmethods="16"/>
+      <file name="calendarStrategy.ts" path="/home/narendra/Projects/vani/src/core/calendarStrategy.ts">
+        <metrics statements="30" coveredstatements="24" conditionals="7" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="46" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="50" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="52" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="58" count="2" type="stmt"/>
+      </file>
+      <file name="utils.ts" path="/home/narendra/Projects/vani/src/core/utils.ts">
+        <metrics statements="25" coveredstatements="25" conditionals="7" coveredconditionals="3" methods="10" coveredmethods="10"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="5" count="32" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="10" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="11" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="21" count="10" type="cond" truecount="0" falsecount="1"/>
+        <line num="22" count="39" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="26" count="8" type="stmt"/>
+        <line num="28" count="30" type="cond" truecount="1" falsecount="1"/>
+        <line num="29" count="8" type="stmt"/>
+        <line num="32" count="3" type="cond" truecount="0" falsecount="2"/>
+        <line num="33" count="9" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="40" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="44" count="5" type="stmt"/>
+        <line num="45" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="52" count="4" type="stmt"/>
+      </file>
+      <file name="wmaStrategy.ts" path="/home/narendra/Projects/vani/src/core/wmaStrategy.ts">
+        <metrics statements="38" coveredstatements="32" conditionals="7" coveredconditionals="1" methods="5" coveredmethods="5"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="55" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="59" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

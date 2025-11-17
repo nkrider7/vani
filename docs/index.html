@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vani-cycle | Documentation & Playground</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .code-block {
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-700 dark:bg-slate-900 dark:text-slate-300 transition-colors duration-300">
+
+  <div class="container mx-auto px-4 py-8 lg:py-12">
+    <header class="text-center mb-12 lg:mb-20 relative">
+      <div class="absolute top-0 left-0">
+        <a href="https://github.com/nkrider7/vani" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold py-2 px-4 rounded-lg transition-colors">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+          Contribute on GitHub
+        </a>
+      </div>
+      <button id="theme-toggle" class="absolute top-0 right-0 p-2 rounded-full text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-pink-500">
+        <svg id="theme-icon-light" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+        <svg id="theme-icon-dark" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+      </button>
+	  <a href="about.html">
+      <h1 class="text-4xl lg:text-6xl font-bold text-slate-900 dark:text-white pt-16">
+        <span class="text-pink-500 dark:text-pink-400">vani</span>-cycle
+      </h1>
+	  </a>
+      <p class="mt-4 text-lg lg:text-xl text-slate-600 dark:text-slate-400">Your library predicts periods, ovulation, fertile windows, and detects irregular cycles using clean TypeScript logic.</p>
+      <p class="mt-2 text-lg lg:text-xl text-slate-600 dark:text-slate-400">It’s the female-cycle engine behind apps.</p>
+    </header>
+
+    <div class="flex flex-col lg:flex-row gap-12">
+      <!-- Sidebar -->
+      <aside class="lg:w-1/4 lg:sticky top-8 self-start">
+        <nav class="space-y-4 text-lg">
+          <h3 class="font-bold text-pink-500 dark:text-pink-400 text-xl mb-4">Navigation</h3>
+          <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+            <li><a href="about.html" class="hover:text-slate-900 dark:hover:text-white transition-colors">About The Project</a></li>
+            <li><a href="#playground" class="hover:text-slate-900 dark:hover:text-white transition-colors">Playground</a></li>
+            <li><a href="#core-concepts" class="hover:text-slate-900 dark:hover:text-white transition-colors">Core Concepts</a></li>
+            <li><a href="#predictions" class="hover:text-slate-900 dark:hover:text-white transition-colors">The 3 Big Predictions</a></li>
+            <li><a href="#anomaly-check" class="hover:text-slate-900 dark:hover:text-white transition-colors">Irregularity Check</a></li>
+            <li><a href="#daily-logs" class="hover:text-slate-900 dark:hover:text-white transition-colors">Daily Logs</a></li>
+            <li><a href="#build-system" class="hover:text-slate-900 dark:hover:text-white transition-colors">Build & Philosophy</a></li>
+            <li><a href="#summary" class="hover:text-slate-900 dark:hover:text-white transition-colors">Summary</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="lg:w-3/4 space-y-16">
+
+        <!-- Playground -->
+        <section id="playground" class="space-y-8 bg-slate-100 dark:bg-slate-800 p-8 rounded-lg">
+          <h2 class="text-3xl font-bold text-slate-900 dark:text-white border-b-2 border-pink-500 dark:border-pink-400 pb-2">Live Playground</h2>
+          <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Input -->
+            <div class="space-y-4">
+              <label for="history-input" class="block font-semibold text-slate-800 dark:text-slate-100">1. Paste History Input (JSON)</label>
+              <textarea id="history-input" rows="10" class="w-full p-4 rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 focus:ring-2 focus:ring-pink-500 focus:outline-none font-mono text-sm"></textarea>
+              
+              <label for="strategy-select" class="block font-semibold text-slate-800 dark:text-slate-100">2. Select Strategy</label>
+              <select id="strategy-select" class="w-full p-3 rounded-md bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 focus:ring-2 focus:ring-pink-500 focus:outline-none">
+                <option value="wma">Weighted Moving Average (wma)</option>
+                <option value="calendar">Calendar Average (calendar)</option>
+              </select>
+
+              <button id="predict-button" class="w-full bg-pink-500 text-white font-bold py-3 px-4 rounded-md hover:bg-pink-600 dark:hover:bg-pink-400 transition-colors">
+                3. Run Prediction
+              </button>
+            </div>
+            <!-- Output -->
+            <div class="space-y-4">
+              <label class="block font-semibold text-slate-800 dark:text-slate-100">Result</label>
+              <pre id="output" class="code-block bg-slate-200 dark:bg-slate-900 text-slate-800 dark:text-slate-200 h-full min-h-[200px] lg:min-h-0">Click "Run Prediction" to see the output.</pre>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Core Concepts -->
+        <section id="core-concepts" class="space-y-8">
+          <h2 class="text-3xl font-bold text-slate-900 dark:text-white border-b-2 border-pink-500 dark:border-pink-400 pb-2">The 4 Core Concepts</h2>
+
+          <!-- 1. Inputs -->
+          <article>
+            <h3 class="text-2xl font-semibold text-slate-800 dark:text-slate-100 mb-4">1. Inputs (what the user gives you)</h3>
+            <p class="mb-4">Your library needs only one thing: <code class="bg-slate-200 dark:bg-slate-700 text-pink-600 dark:text-pink-300 px-2 py-1 rounded">periodStarts[]</code></p>
+            <p class="mb-4">A list of period start dates:</p>
+            <pre class="code-block bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200"><code>[
+  { date: "2024-12-01" },
+  { date: "2024-12-29" },
+  { date: "2025-01-26" }
+]</code></pre>
+            <p class="mt-4">From this, your library calculates cycle lengths like: <code class="bg-slate-200 dark:bg-slate-700 text-pink-600 dark:text-pink-300 px-2 py-1 rounded">28 days, 28 days, ...</code></p>
+          </article>
+
+          <!-- 2. Engine -->
+          <article>
+            <h3 class="text-2xl font-semibold text-slate-800 dark:text-slate-100 mb-4">2. Engine (PredictionEngine class)</h3>
+            <p class="mb-4">Users interact with <code class="bg-slate-200 dark:bg-slate-700 text-pink-600 dark:text-pink-300 px-2 py-1 rounded">PredictionEngine</code>:</p>
+            <pre class="code-block bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200"><code><span class="token.keyword">const</span> engine = <span class="token.keyword">new</span> PredictionEngine({ strategy: <span class="token.string">"calendar"</span> });
+engine.predictNextPeriod(history);
+engine.predictOvulation(history);
+engine.predictFertileWindow(history);</code></pre>
+            <p class="mt-4">The engine:</p>
+            <ul class="list-disc list-inside mt-2 space-y-1">
+              <li>reads the cycle history</li>
+              <li>chooses a prediction strategy</li>
+              <li>calculates expected dates</li>
+              <li>builds confidence</li>
+              <li>adds human-friendly notes</li>
+            </ul>
+          </article>
+
+          <!-- 3. Strategies -->
+          <article>
+            <h3 class="text-2xl font-semibold text-slate-800 dark:text-slate-100 mb-4">3. Strategies (the brain of predictions)</h3>
+            <p class="mb-4">Right now you support two:</p>
+            <div class="grid md:grid-cols-2 gap-8 mt-4">
+              <div class="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
+                <h4 class="font-bold text-xl text-pink-500 dark:text-pink-400">✔️ calendar strategy</h4>
+                <p class="mt-2">Simple average: take all cycle lengths, average them, and add to the last period to predict the next. Works well for regular cycles.</p>
+              </div>
+              <div class="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
+                <h4 class="font-bold text-xl text-pink-500 dark:text-pink-400">✔️ wma strategy</h4>
+                <p class="mt-2">Weighted moving average: recent cycles have more importance, while old cycles have less. Better accuracy for slight irregularities.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Output -->
+          <article>
+            <h3 class="text-2xl font-semibold text-slate-800 dark:text-slate-100 mb-4">4. What the predictions return</h3>
+            <p class="mb-4">Every prediction returns the same type of structured output:</p>
+            <pre class="code-block bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200"><code>{
+  <span class="token.keyword">likely</span>: <span class="token.string">"2025-02-10"</span>,
+  <span class="token.keyword">window</span>: { <span class="token.keyword">start</span>: <span class="token.string">"2025-02-09"</span>, <span class="token.keyword">end</span>: <span class="token.string">"2025-02-11"</span> },
+  <span class="token.keyword">confidence</span>: <span class="token.number">0.76</span>,
+  <span class="token.keyword">notes</span>: [
+    <span class="token.string">"Your average cycle length is 28 days."</span>,
+    <span class="token.string">"Based on 7 cycles."</span>,
+    <span class="token.string">"Your cycles are very regular. Prediction reliability is high."</span>
+  ]
+}</code></pre>
+            <div class="mt-4 space-y-2">
+              <p><code class="bg-slate-200 dark:bg-slate-700 text-pink-600 dark:text-pink-300 px-2 py-1 rounded">likely</code>: The most likely predicted date.</p>
+              <p><code class="bg-slate-200 dark:bg-slate-700 text-pink-600 dark:text-pink-300 px-2 py-1 rounded">window</code>: A small ± range for safety.</p>
+              <p><code class="bg-slate-200 dark:bg-slate-700 text-pink-600 dark:text-pink-300 px-2 py-1 rounded">confidence</code>: 0 → low, 1 → high. Shows how stable the user’s cycles are.</p>
+              <p><code class="bg-slate-200 dark:bg-slate-700 text-pink-600 dark:text-pink-300 px-2 py-1 rounded">notes</code>: Explains the prediction in human language.</p>
+            </div>
+          </article>
+        </section>
+
+        <!-- The 3 Big Predictions -->
+        <section id="predictions" class="space-y-8">
+          <h2 class="text-3xl font-bold text-slate-900 dark:text-white border-b-2 border-pink-500 dark:border-pink-400 pb-2">The 3 Big Predictions</h2>
+          <div class="space-y-6">
+            <p><code class="bg-slate-200 dark:bg-slate-700 text-pink-600 dark:text-pink-300 px-2 py-1 rounded">1. predictNextPeriod()</code>: Finds the next cycle start date. Uses average cycle length, strategy rules, stability of cycles, and interval consistency.</p>
+            <p><code class="bg-slate-200 dark:bg-slate-700 text-pink-600 dark:text-pink-300 px-2 py-1 rounded">2. predictOvulation()</code>: Ovulation = predicted next period − luteal phase (default 14 days). Returns likely ovulation date, confidence, and notes.</p>
+            <p><code class="bg-slate-200 dark:bg-slate-700 text-pink-600 dark:text-pink-300 px-2 py-1 rounded">3. predictFertileWindow()</code>: Fertile window = ovulation ± (−5 to +1 days). Returns start, peak, end, and confidence.</p>
+          </div>
+        </section>
+
+        <!-- Irregularity Check -->
+        <section id="anomaly-check" class="space-y-8">
+          <h2 class="text-3xl font-bold text-slate-900 dark:text-white border-b-2 border-pink-500 dark:border-pink-400 pb-2">Irregularity Check (anomalyCheck)</h2>
+          <p>The simplest part of the library. You calculate cycle lengths: <code class="bg-slate-200 dark:bg-slate-700 text-pink-600 dark:text-pink-300 px-2 py-1 rounded">[28, 29, 28, 27, 29]</code>. Then you check if these numbers are close (regular) or jumping (irregular).</p>
+          <pre class="code-block bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200"><code><span class="token.keyword">const</span> intervals = [<span class="token.number">20</span>, <span class="token.number">40</span>, <span class="token.number">35</span>];
+anomalyCheck(intervals);
+
+<span class="token.comment">// Returns:</span>
+{
+  <span class="token.keyword">irregular</span>: <span class="token.keyword">true</span>,
+  <span class="token.keyword">message</span>: <span class="token.string">"Your cycles vary more than usual."</span>
+}</code></pre>
+          <p class="mt-4">This improves the confidence score and the notes.</p>
+        </section>
+
+        <!-- Daily Logs -->
+        <section id="daily-logs" class="space-y-8">
+          <h2 class="text-3xl font-bold text-slate-900 dark:text-white border-b-2 border-pink-500 dark:border-pink-400 pb-2">Daily Logs (Optional Future Data)</h2>
+          <p>Your library supports structured user logs to enable future AI/ML features:</p>
+          <pre class="code-block bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200"><code>{
+  <span class="token.keyword">date</span>: <span class="token.string">"2025-02-10"</span>,
+  <span class="token.keyword">temperature</span>: <span class="token.number">97.8</span>,
+  <span class="token.keyword">cervicalMucus</span>: <span class="token.string">"creamy"</span>,
+  <span class="token.keyword">stress</span>: <span class="token.number">3</span>,
+  <span class="token.keyword">symptoms</span>: [<span class="token.string">"headache"</span>]
+}</code></pre>
+        </section>
+
+        <!-- Build System & Philosophy -->
+        <section id="build-system" class="space-y-8">
+          <h2 class="text-3xl font-bold text-slate-900 dark:text-white border-b-2 border-pink-500 dark:border-pink-400 pb-2">Build & Philosophy</h2>
+          <p class="mb-4">Your library uses a professional setup:</p>
+          <ul class="list-disc list-inside space-y-1 mb-4">
+            <li>TypeScript</li>
+            <li>tsup to build CJS + ESM</li>
+            <li>Tests using Jest</li>
+            <li>Clean <code class="bg-slate-200 dark:bg-slate-700 text-pink-600 dark:text-pink-300 px-2 py-1 rounded">src</code> folder structure</li>
+          </ul>
+          <p>Why this library is good:</p>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4 text-center">
+            <div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">Small</div>
+            <div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">Predictable</div>
+            <div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">Pure Functions</div>
+            <div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">TypeScript</div>
+            <div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">Testable</div>
+            <div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">Extendable</div>
+            <div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">Simple</div>
+            <div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">Safe</div>
+          </div>
+        </section>
+
+        <!-- Summary -->
+        <section id="summary" class="bg-pink-500 dark:bg-pink-400 text-white dark:text-slate-900 p-8 rounded-lg text-center">
+          <h2 class="text-3xl font-bold mb-4">The Simplest "Full Explanation" Ever</h2>
+          <p class="text-xl">
+            You give your library a history of period start dates. It calculates cycle lengths. Then it predicts the next period, ovulation, and fertile window. It checks if the cycles are regular. It returns a date, a window, confidence, and human notes. And everything is TypeScript, clean, and accurate.
+          </p>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <footer class="text-center mt-16 py-8 border-t border-slate-200 dark:border-slate-800">
+    <div class="flex justify-center gap-6 mb-4">
+      <a href="https://github.com/nkrider7" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">
+        <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/narendra-nishad/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">
+        <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+      </a>
+    </div>
+    <p class="text-slate-500 dark:text-slate-400">Developed by Narendra Nishad</p>
+  </footer>
+
+<script>
+// --- Theme Switcher ---
+const themeToggle = document.getElementById('theme-toggle');
+const themeIconLight = document.getElementById('theme-icon-light');
+const themeIconDark = document.getElementById('theme-icon-dark');
+
+// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+    themeIconLight.classList.remove('hidden');
+} else {
+    document.documentElement.classList.remove('dark')
+    themeIconDark.classList.remove('hidden');
+}
+
+themeToggle.addEventListener('click', function() {
+    // toggle icons
+    themeIconLight.classList.toggle('hidden');
+    themeIconDark.classList.toggle('hidden');
+
+    // if set via local storage previously
+    if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('color-theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('color-theme', 'light');
+        }
+
+    // if NOT set via local storage previously
+    } else {
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('color-theme', 'light');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('color-theme', 'dark');
+        }
+    }
+});
+
+
+// --- Start of Embedded vani-cycle Library ---
+const DEFAULTS = { lutealPhaseDays: 14 };
+function parseIsoDay(s) { const p = s.split('-').map(i=>parseInt(i,10)); return new Date(p[0],p[1]-1,p[2]); }
+function formatIsoDay(d) { return `${d.getFullYear()}-${(d.getMonth()+1).toString().padStart(2,'0')}-${d.getDate().toString().padStart(2,'0')}`; }
+function addDaysIso(iso, days) { const d=parseIsoDay(iso); d.setDate(d.getDate()+days); return formatIsoDay(d); }
+function daysBetween(a,b){ const d1=parseIsoDay(a),d2=parseIsoDay(b); return Math.floor((Date.UTC(d2.getFullYear(),d2.getMonth(),d2.getDate())-Date.UTC(d1.getFullYear(),d1.getMonth(),d1.getDate()))/(1e3*60*60*24)); }
+function mean(n){ return n.length===0?0:n.reduce((s,v)=>s+v,0)/n.length; }
+function std(n){ const m=mean(n); return Math.sqrt(n.reduce((s,v)=>s+(v-m)**2,0)/(n.length||1)); }
+function clamp(v,l=0,h=1){ return Math.max(l,Math.min(h,v)); }
+function anomalyCheck(i){ if(i.length<2)return{irregular:!1}; const s=std(i); return s>5?{irregular:!0,message:"Your cycles vary more than usual."}:{irregular:!1}; }
+function calendarPredict(h){ const e=[...h.periodStarts]; if(e.length<1)throw new Error("Need at least one period start"); const i=[]; for(let j=0;j+1<e.length;j++)i.push(daysBetween(e[j].date,e[j+1].date)); const l=e[e.length-1].date; if(i.length===0)return{likely:addDaysIso(l,28),confidence:.2,notes:["Not enough data, used fallback 28d"]}; const a=Math.round(mean(i)),s=std(i),k=addDaysIso(l,a),r=Math.min(3,Math.max(1,Math.round(s/2))),t=addDaysIso(k,-r),d=addDaysIso(k,r),c=clamp((i.length-1)/10,0,.8),o=clamp(1-s/10,0,1),f=clamp(c*.6+o*.4,0,1),n=[`Your average cycle length is ${a} days.`,`Based on ${i.length} cycles.`],y=anomalyCheck(i); y.irregular&&n.push(y.message); s<2?n.push("Your cycles are very regular. Prediction reliability is high."):s<4?n.push("Recent cycles are stable. Prediction reliability is good."):n.push("Cycle variance is slightly higher, which may affect prediction accuracy."); return{likely:k,window:{start:t,end:d},confidence:f,notes:n}; }
+function wmaPredict(h){ const e=[...h.periodStarts]; if(e.length<1)throw new Error("Need at least one period start"); const i=[]; for(let j=0;j+1<e.length;j++)i.push(daysBetween(e[j].date,e[j+1].date)); const l=e[e.length-1].date; if(i.length===0)return{likely:addDaysIso(l,28),confidence:.2,notes:["Not enough data, fallback 28d"]}; const n=i.length,r=i.map((_,j)=>2**(j+1)).reverse(),t=r.reduce((s,v)=>s+v,0),d=i.reduce((s,v,j)=>s+v*r[j]/t,0),p=Math.round(d),k=addDaysIso(l,p),s=std(i),c=clamp((n-1)/10,0,.8),o=clamp(1-s/10,0,1),f=clamp(c*.5+o*.5,0,1),a=Math.min(3,Math.max(1,Math.round(s/2))),u=addDaysIso(k,-a),g=addDaysIso(k,a),m=[`Predicted cycle length is ${p} days (based on a weighted average).`],y=anomalyCheck(i); y.irregular&&m.push(y.message); s<2?m.push("Your cycles are very regular. Prediction reliability is high."):s<4?m.push("Recent cycles are stable. Prediction reliability is good."):m.push("Cycle variance is slightly higher, which may affect prediction accuracy."); return{likely:k,window:{start:u,end:g},confidence:f,notes:m}; }
+class PredictionEngine{constructor(c){this.config={...DEFAULTS,...c};this.strategies=new Map;this.registerStrategy("calendar",calendarPredict);this.registerStrategy("wma",wmaPredict)}registerStrategy(n,f){this.strategies.set(n,f)}chooseStrategy(n){const k=n||this.config.strategy||"wma",f=this.strategies.get(k);if(!f)throw new Error(`Strategy '${k}' not found`);return f}predictNextPeriod(h){return this.chooseStrategy(this.config.strategy)(h,this.config)}predictOvulation(h){const n=this.predictNextPeriod(h),l=this.config.lutealPhaseDays??DEFAULTS.lutealPhaseDays,o=addDaysIso(n.likely,-l),t=[...n.notes||[],`Estimated ovulation = ${o}`];return{likely:o,confidence:n.confidence,notes:t}}predictFertileWindow(h){const o=this.predictOvulation(h),s=addDaysIso(o.likely,-5),e=addDaysIso(o.likely,1);return{start:s,peak:o.likely,end:e,confidence:o.confidence,notes:o.notes}}analyze(h){const r={};for(const[n,f]of this.strategies.entries())try{r[n]=f(h,this.config)}catch{}return r}}
+
+// --- Playground Application Logic ---
+document.addEventListener('DOMContentLoaded', () => {
+  const historyInput = document.getElementById('history-input');
+  const strategySelect = document.getElementById('strategy-select');
+  const predictButton = document.getElementById('predict-button');
+  const output = document.getElementById('output');
+
+  const defaultHistory = {
+    periodStarts: [
+      { date: "2025-01-02" }, { date: "2025-01-30" }, { date: "2025-02-27" },
+      { date: "2025-03-28" }, { date: "2025-04-25" }, { date: "2025-05-22" }
+    ]
+  };
+
+  historyInput.value = JSON.stringify(defaultHistory, null, 2);
+
+  predictButton.addEventListener('click', () => {
+    let history;
+    try {
+      history = JSON.parse(historyInput.value);
+      if (!history.periodStarts || !Array.isArray(history.periodStarts)) {
+        throw new Error("Input must have a 'periodStarts' array.");
+      }
+    } catch (e) {
+      output.textContent = `Error parsing JSON: ${e.message}`;
+      output.classList.add('text-red-500');
+      return;
+    }
+
+    output.classList.remove('text-red-500');
+    const strategy = strategySelect.value;
+    const engine = new PredictionEngine({ strategy });
+
+    try {
+      const results = {
+        nextPeriod: engine.predictNextPeriod(history),
+        ovulation: engine.predictOvulation(history),
+        fertileWindow: engine.predictFertileWindow(history),
+        analysis: engine.analyze(history)
+      };
+      output.textContent = JSON.stringify(results, null, 2);
+    } catch (e) {
+      output.textContent = `Prediction Error: ${e.message}`;
+      output.classList.add('text-red-500');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About vani-cycle | Project Vision</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-700 dark:bg-slate-900 dark:text-slate-300 transition-colors duration-300">
+
+  <div class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="sticky top-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm z-10">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4 border-b border-slate-200 dark:border-slate-800">
+          <a href="index.html" class="text-2xl font-bold text-slate-900 dark:text-white">
+            <span class="text-pink-500 dark:text-pink-400">vani</span>-cycle
+          </a>
+          <div class="flex items-center gap-4">
+            <a href="index.html" class="text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Docs</a>
+            <button id="theme-toggle" class="p-2 rounded-full text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-pink-500">
+              <svg id="theme-icon-light" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+              <svg id="theme-icon-dark" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-grow">
+      <!-- Hero Section -->
+      <section class="text-center py-20 lg:py-32 bg-slate-50 dark:bg-slate-800/50">
+        <div class="container mx-auto px-4">
+          <h1 class="text-4xl lg:text-6xl font-bold text-slate-900 dark:text-white">The Future of <span class="text-pink-500 dark:text-pink-400">vani-cycle</span></h1>
+          <p class="mt-6 text-lg lg:text-xl max-w-3xl mx-auto text-slate-600 dark:text-slate-400">Moving beyond statistical predictions to build a truly intelligent health companion, powered by modern AI and Machine Learning.</p>
+        </div>
+      </section>
+
+      <!-- Vision Section -->
+      <section class="py-16 lg:py-24">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Our Vision: From Code to Companion</h2>
+            <p class="mt-4 text-lg max-w-2xl mx-auto text-slate-600 dark:text-slate-400">The goal is to evolve `vani-cycle` from a simple prediction library into a proactive, personalized health platform. Here’s how we plan to get there.</p>
+          </div>
+          <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8 text-center">
+            <!-- Card 1: Hyper-Personalization -->
+            <div class="bg-slate-100 dark:bg-slate-800 p-8 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-bold text-pink-500 dark:text-pink-400">Hyper-Personalization</h3>
+              <p class="mt-4 text-slate-600 dark:text-slate-400">By integrating daily logs—such as Basal Body Temperature (BBT), stress levels, and sleep patterns—our ML models will learn each user's unique cycle, providing predictions that are far more accurate than any calendar-based method.</p>
+            </div>
+            <!-- Card 2: Proactive Anomaly Detection -->
+            <div class="bg-slate-100 dark:bg-slate-800 p-8 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-bold text-pink-500 dark:text-pink-400">Proactive Anomaly Detection</h3>
+              <p class="mt-4 text-slate-600 dark:text-slate-400">Future versions will use advanced algorithms to detect significant deviations from a user's baseline. The system will be able to flag potential health issues, encouraging users to seek professional medical advice when necessary.</p>
+            </div>
+            <!-- Card 3: Holistic Health Insights -->
+            <div class="bg-slate-100 dark:bg-slate-800 p-8 rounded-lg shadow-lg">
+              <h3 class="text-2xl font-bold text-pink-500 dark:text-pink-400">Holistic Health Insights</h3>
+              <p class="mt-4 text-slate-600 dark:text-slate-400">Using generative AI, we aim to provide conversational, context-aware feedback. Imagine asking, "Why was my cycle different this month?" and receiving an insight based on your logged data, like stress or sleep changes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technology Roadmap -->
+      <section class="py-16 lg:py-24 bg-slate-50 dark:bg-slate-800/50">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Technology Roadmap</h2>
+            <p class="mt-4 text-lg max-w-2xl mx-auto text-slate-600 dark:text-slate-400">Our foundation is strong, but our future is even more exciting.</p>
+          </div>
+          <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="text-xl font-bold text-slate-800 dark:text-slate-100">Current Stack</h4>
+              <ul class="mt-4 space-y-2 list-disc list-inside text-slate-600 dark:text-slate-400">
+                <li>Clean, modular TypeScript</li>
+                <li>Statistically-sound prediction strategies (WMA)</li>
+                <li>Pure functions for testability and reliability</li>
+                <li>Modern, efficient build system with `tsup`</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-slate-800 dark:text-slate-100">Future Tech</h4>
+              <ul class="mt-4 space-y-2 list-disc list-inside text-slate-600 dark:text-slate-400">
+                <li><span class="font-semibold text-pink-500 dark:text-pink-400">LSTM Networks:</span> For advanced time-series forecasting with multiple data inputs.</li>
+                <li><span class="font-semibold text-pink-500 dark:text-pink-400">TensorFlow.js:</span> To run ML models directly in the browser, ensuring user data privacy.</li>
+                <li><span class="font-semibold text-pink-500 dark:text-pink-400">Generative AI APIs:</span> For providing natural language insights and health coaching.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="text-center py-20 lg:py-32">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">Join the Vision</h2>
+          <p class="mt-4 text-lg max-w-2xl mx-auto text-slate-600 dark:text-slate-400">This is an open-source project with an ambitious goal. If you're passionate about health tech, data science, or building beautiful applications, your contributions are welcome.</p>
+          <a href="https://github.com/nkrider7/vani" target="_blank" rel="noopener noreferrer" class="mt-8 inline-block bg-pink-500 text-white font-bold py-4 px-8 rounded-lg hover:bg-pink-600 dark:hover:bg-pink-400 transition-transform transform hover:scale-105">
+            Contribute on GitHub
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 border-t border-slate-200 dark:border-slate-800">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-center gap-6 mb-4">
+          <a href="https://github.com/nkrider7" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">
+            <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/narendra-nishad/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">
+            <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+        <p class="text-slate-500 dark:text-slate-400">Developed by Narendra Nishad</p>
+      </div>
+    </footer>
+  </div>
+
+<script>
+// --- Theme Switcher ---
+const themeToggle = document.getElementById('theme-toggle');
+const themeIconLight = document.getElementById('theme-icon-light');
+const themeIconDark = document.getElementById('theme-icon-dark');
+
+function applyTheme() {
+  if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+    themeIconLight.classList.remove('hidden');
+    themeIconDark.classList.add('hidden');
+  } else {
+    document.documentElement.classList.remove('dark');
+    themeIconDark.classList.remove('hidden');
+    themeIconLight.classList.add('hidden');
+  }
+}
+
+applyTheme();
+
+themeToggle.addEventListener('click', function() {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('color-theme', isDark ? 'dark' : 'light');
+    applyTheme();
+});
+</script>
+
+</body>
+</html>

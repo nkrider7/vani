@@ -1,5 +1,5 @@
 import { HistoryInput, PredictionResult } from "../types";
-import { daysBetween, addDaysIso, mean, std, clamp } from "./utils";
+import { daysBetween, addDaysIso, mean, std, clamp, anomalyCheck } from "./utils";
 
 export function calendarPredict(history: HistoryInput): PredictionResult {
   const entries = [...history.periodStarts];
@@ -19,7 +19,7 @@ export function calendarPredict(history: HistoryInput): PredictionResult {
     return {
       likely,
       confidence: 0.2,
-      notes: ["not enough data, used fallback 28d"],
+      notes: ["Not enough data for a reliable prediction, using a 28-day cycle as a fallback."],
     };
   }
 
@@ -38,10 +38,22 @@ export function calendarPredict(history: HistoryInput): PredictionResult {
   const confidence = clamp(base * 0.6 + stability * 0.4, 0, 1);
 
   const notes = [
-    `avg interval ${avg}d`,
-    `std ${s.toFixed(2)}d`,
-    `samples ${intervals.length}`,
+    `Your average cycle length is ${avg} days.`,
+    `Based on ${intervals.length} cycles.`,
   ];
+
+  const anomaly = anomalyCheck(intervals);
+  if (anomaly.irregular) {
+    notes.push(anomaly.message!);
+  }
+
+  if (s < 2) {
+    notes.push("Your cycles are very regular. Prediction reliability is high.");
+  } else if (s < 4) {
+    notes.push("Recent cycles are stable. Prediction reliability is good.");
+  } else {
+    notes.push("Cycle variance is slightly higher, which may affect prediction accuracy.");
+  }
 
   return { likely, window: { start, end }, confidence, notes };
 }

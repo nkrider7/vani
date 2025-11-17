@@ -1,5 +1,5 @@
 import { HistoryInput, PredictionResult } from "../types";
-import { daysBetween, addDaysIso, mean, std, clamp } from "./utils";
+import { daysBetween, addDaysIso, mean, std, clamp, anomalyCheck } from "./utils";
 
 function computeIntervals(entries: HistoryInput["periodStarts"]): number[] {
   const intervals: number[] = [];
@@ -21,7 +21,7 @@ export function wmaPredict(history: HistoryInput): PredictionResult {
     return {
       likely,
       confidence: 0.2,
-      notes: ["not enough data, fallback 28d"],
+      notes: ["Not enough data for a reliable prediction, using a 28-day cycle as a fallback."],
     };
   }
 
@@ -48,10 +48,21 @@ export function wmaPredict(history: HistoryInput): PredictionResult {
   const end = addDaysIso(likely, windowRadius);
 
   const notes = [
-    `wma ${wma.toFixed(2)}d`,
-    `pred interval ${predictedInterval}d`,
-    `std ${s.toFixed(2)}d`,
+    `Predicted cycle length is ${predictedInterval} days (based on a weighted average of recent cycles).`,
   ];
+
+  const anomaly = anomalyCheck(intervals);
+  if (anomaly.irregular) {
+    notes.push(anomaly.message!);
+  }
+
+  if (s < 2) {
+    notes.push("Your cycles are very regular. Prediction reliability is high.");
+  } else if (s < 4) {
+    notes.push("Recent cycles are stable. Prediction reliability is good.");
+  } else {
+    notes.push("Cycle variance is slightly higher, which may affect prediction accuracy.");
+  }
 
   return { likely, window: { start, end }, confidence, notes };
 }

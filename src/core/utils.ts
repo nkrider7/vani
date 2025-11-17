@@ -32,3 +32,22 @@ export function std(nums: number[]): number {
 export function clamp(v: number, lo = 0, hi = 1) {
   return Math.max(lo, Math.min(hi, v));
 }
+
+export function anomalyCheck(intervals: number[]): {
+  irregular: boolean;
+  message?: string;
+} {
+  if (intervals.length < 2) {
+    return { irregular: false };
+  }
+
+  const s = std(intervals);
+  if (s > 5) {
+    return {
+      irregular: true,
+      message: "Your cycles vary more than usual.",
+    };
+  }
+
+  return { irregular: false };
+}
