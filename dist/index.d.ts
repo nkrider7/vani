@@ -2,9 +2,17 @@ type ISODateStr = string;
 interface PeriodEntry {
     date: ISODateStr;
 }
+interface DailyLog {
+    date: ISODateStr;
+    temperature?: number;
+    cervicalMucus?: "dry" | "sticky" | "creamy" | "watery" | "eggwhite";
+    stress?: 1 | 2 | 3 | 4 | 5;
+    sleepHours?: number;
+    symptoms?: string[];
+}
 interface HistoryInput {
     periodStarts: PeriodEntry[];
-    cycleLengths?: number[];
+    dailyLogs?: DailyLog[];
 }
 interface PredictorConfig {
     strategy?: "wma" | "calendar" | string;
@@ -49,4 +57,4 @@ declare class PredictionEngine {
     analyze(history: HistoryInput): Record<string, PredictionResult>;
 }
 
-export { FertileWindow, HistoryInput, ISODateStr, PeriodEntry, PredictionEngine, PredictionResult, PredictorConfig, PregnancyPrediction };
+export { DailyLog, FertileWindow, HistoryInput, ISODateStr, PeriodEntry, PredictionEngine, PredictionResult, PredictorConfig, PregnancyPrediction };

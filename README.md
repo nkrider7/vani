@@ -1,37 +1,94 @@
-# vani-cycle
+<p align="center">
+  <img src="/banner.png" alt="vani-cycle banner" />
+</p>
 
-A TypeScript library for menstrual cycle predictions.
+<div align="center">
 
-`vani-cycle` provides a flexible prediction engine to forecast menstrual cycles, ovulation, and fertile windows based on historical data. It's designed to be simple to use and integrate into your applications.
+<a href="https://discord.gg/nkrider">
+  <img src="https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white"/>
+</a>
+<a href="https://instagram.com/nkriderking">
+  <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=instagram&logoColor=white"/>
+</a>
+<a href="https://www.linkedin.com/in/narendra-a90182223/">
+  <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white"/>
+</a>
+<a href="mailto:narendranishad59@gmail.com">
+  <img src="https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white"/>
+</a>
 
-## Features
+<br><br>
 
-- Predict the next menstrual period.
-- Estimate the ovulation day.
-- Calculate the fertile window.
-- Multiple prediction strategies (Weighted Moving Average, simple Calendar average).
-- Analyze cycle history with all available strategies.
-- TypeScript ready.
+<h2><b>TypeScript Ready • Easy to Use • All-in-One Cycle Engine</b></h2>
 
-## Installation
+A TypeScript library for accurate menstrual cycle predictions, ovulation estimation, fertile windows, and cycle analytics.
 
-Install the package using npm:
+<br>
+
+</div>
+
+---
+
+# 🚺 **vani-cycle**
+
+`vani-cycle` provides a flexible prediction engine for period tracking, ovulation calculations, and fertile window forecasting.  
+Built to be simple, private, and easy to integrate into any app.
+
+---
+
+# ✨ Features
+
+- Predict the next menstrual period
+- Estimate ovulation with cycle-based math
+- Calculate fertile windows
+- Strategy-based prediction (WMA + Calendar)
+- Cycle irregularity detection
+- Confidence scores + human-friendly notes
+- Fully written in TypeScript
+
+---
+
+# 📦 Installation
 
 ```bash
 npm install vani-cycle
-```
 
-## Usage
 
-Here's a simple example of how to use the `PredictionEngine`:
+# 🚺 **vani-cycle**
 
-```typescript
+`vani-cycle` provides a flexible cycle prediction engine built for modern apps.  
+It delivers clean predictions with confidence scores, windows, and human-friendly notes.
+
+---
+
+# ✨ Features
+
+- Predict the next menstrual period  
+- Estimate ovulation  
+- Calculate fertile windows  
+- Multiple strategies (WMA, Calendar)  
+- Cycle irregularity detection  
+- TypeScript support  
+- Easy-to-use API  
+- Zero external dependencies  
+
+---
+
+# 📦 Installation
+
+```bash
+npm install vani-cycle
+````
+
+---
+
+# 🚀 Quick Start
+
+```ts
 import { PredictionEngine } from "vani-cycle";
 
-// Initialize the engine with a strategy (e.g., 'wma' or 'calendar')
 const engine = new PredictionEngine({ strategy: "wma" });
 
-// Provide a history of period start dates
 const history = {
   periodStarts: [
     { date: "2025-01-02" },
@@ -40,22 +97,22 @@ const history = {
   ]
 };
 
-// Get predictions
 const nextPeriod = engine.predictNextPeriod(history);
-console.log("Next period prediction:", nextPeriod);
+console.log("Next period:", nextPeriod);
 
 const ovulation = engine.predictOvulation(history);
-console.log("Ovulation prediction:", ovulation);
+console.log("Ovulation:", ovulation);
 
-const fertileWindow = engine.predictFertileWindow(history);
-console.log("Fertile window:", fertileWindow);
+const fertile = engine.predictFertileWindow(history);
+console.log("Fertile Window:", fertile);
 
-// You can also analyze the history with all available strategies
 const analysis = engine.analyze(history);
-console.log("Analysis with all strategies:", analysis);
+console.log("Strategy Comparison:", analysis);
 ```
 
-### Example Output
+---
+
+# 📊 Example Output
 
 ```json
 {
@@ -72,55 +129,68 @@ console.log("Analysis with all strategies:", analysis);
     "likely": "2025-03-13",
     "confidence": 0.65,
     "notes": [
-      "wma 27.50d",
-      "pred interval 28d",
-      "std 0.71d",
-      "estimated ovulation = 2025-03-13"
-    ]
-  },
-  "fertileWindow": {
-    "start": "2025-03-08",
-    "peak": "2025-03-13",
-    "end": "2025-03-14",
-    "confidence": 0.65,
-    "notes": [
-      "wma 27.50d",
-      "pred interval 28d",
-      "std 0.71d",
       "estimated ovulation = 2025-03-13"
     ]
   }
 }
 ```
 
-## API
+---
 
-### `PredictionEngine(config?: PredictorConfig)`
+# 📘 API Overview
 
-Creates a new prediction engine instance.
+### `PredictionEngine(config)`
 
-**Config:**
+#### Methods
 
-- `strategy`: The prediction strategy to use. Can be `"wma"` (default) or `"calendar"`.
-- `lutealPhaseDays`: The number of days in the luteal phase (default: 14).
+| Method                          | Description                       |
+| ------------------------------- | --------------------------------- |
+| `predictNextPeriod(history)`    | Predict next menstrual cycle      |
+| `predictOvulation(history)`     | Estimate ovulation day            |
+| `predictFertileWindow(history)` | Calculate fertile range           |
+| `predictPregnancy(lastPeriod)`  | Estimate due date and trimester   |
+| `analyze(history)`              | Compare all prediction strategies |
 
-### Methods
+---
 
-- `predictNextPeriod(history: HistoryInput): PredictionResult`
-- `predictOvulation(history: HistoryInput): PredictionResult`
-- `predictFertileWindow(history: HistoryInput): FertileWindow`
-- `predictPregnancy(lastPeriodIso: string): PregnancyPrediction`
-- `analyze(history: HistoryInput): Record<string, PredictionResult>`
+# 🧠 Strategies
 
-## Strategies
+### **WMA (Weighted Moving Average)**
 
-`vani-cycle` comes with two built-in prediction strategies:
+More accurate, gives priority to recent cycles.
 
-- **`wma` (Weighted Moving Average):** This is the default strategy. It calculates the average cycle length but gives more weight to recent cycles, making it more responsive to changes in cycle patterns.
-- **`calendar`:** A simpler strategy that calculates the unweighted average of all past cycle lengths.
+### **Calendar**
 
-You can also register your own custom prediction strategies.
+Simple average of all cycle lengths.
 
-## License
+### **Custom Strategies**
 
-This project is licensed under the MIT License.
+You can register your own:
+
+```ts
+engine.registerStrategy("myLogic", myStrategyFn);
+```
+
+---
+
+# 🔍 Irregular Cycle Detection
+
+Your library includes a built-in anomaly detector:
+
+* detects unusual cycle jumps
+* adjusts confidence
+* returns human notes like:
+  *"Your cycles vary more than usual."*
+
+---
+
+# 📄 License
+
+MIT License.
+
+---
+
+# ❤️ Credits
+
+Built by **Narendra (nkrider)**
+For real apps, real people, real health.
